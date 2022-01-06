@@ -43,3 +43,45 @@ def start():
     else:
         YesOrNo()
 ```
+## F1.8.03.L2 - Autoclicker (Clicker v5)
+Ik heb de clickerV4 aangepast. Er is nu een checkbox voor autoclicker.
+``` python
+def autoClick():
+    global countCheck
+    checkBox = autoClickBoxVar.get()
+    if checkBox == 1:
+        if countCheck == "Up":
+            up()
+        elif countCheck == "Down":
+            down()
+        root.after(500,autoClick)
+```
+``` python
+def up():
+    global count, countCheck
+    count += 1
+    countLabel.configure(text = count)
+    colourChanges("")
+    countCheck = "Up"
+    autoClickBox.configure(state = "normal")
+def down():
+    global count, countCheck
+    count -= 1
+    countLabel.configure(text = count)
+    colourChanges("")
+    countCheck = "Down"
+    autoClickBox.configure(state = "normal")
+```
+``` python
+autoClickBoxVar = tk.IntVar()
+autoClickBox = tk.Checkbutton(
+    root, 
+    text = "Autoclick",
+    command = autoClick,
+    variable = autoClickBoxVar,
+    state = "disabled",
+    onvalue = 1, 
+    offvalue = 0
+    )
+autoClickBox.pack()
+```
