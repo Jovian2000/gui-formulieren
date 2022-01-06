@@ -1,6 +1,6 @@
 # gui-formulieren
 ## F1.8.03.L1 - Simple FPS trainer v2
-Ik heb de entry erbij geplaatst
+Ik heb de entry erbij geplaatst, je kan nu kiezen hoeveel seconde je wilt
 ``` python
 timePickLabel = tk.Label(
     root, 
