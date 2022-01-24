@@ -133,7 +133,7 @@ labelInfo.place(relx = 0.5, rely = 0.7, anchor = "center")
 
 daysValue()
 
-yearEntry.bind("<Return>", entryCommand)
+yearEntry.bind("<KeyRelease>", entryCommand)
 monthCombobox.bind("<<ComboboxSelected>>", setDays)
 
 root.mainloop()

@@ -16,7 +16,7 @@ def autoClick():
             up()
         elif countCheck == "Down":
             down()
-        root.after(500,autoClick)
+        root.after(100,autoClick)
 
 def multiplyOrDivide(event):
     global count, countCheck
