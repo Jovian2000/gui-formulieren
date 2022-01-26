@@ -402,3 +402,5 @@ setWord()
 
 root.mainloop()
 ```
+### aanpassingen
+Ik heb nog wat aanpassingen gedaan in raadhetwoord.py, i.p.v. dat hij nu de labels en knoppen veranderd, maakt de programma een nieuwe aan.

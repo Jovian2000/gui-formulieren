@@ -25,6 +25,7 @@ def setWord():
         font = ("arial", 16)
         )       
     labelGame.grid(row = 0, column = 1)
+
     def wordSet():
         global textInfo, points
         answer = guessword.get()
@@ -44,6 +45,7 @@ def setWord():
                 message = gameMessage)
             if question:
                 frameGame.destroy()
+                root.title("Raad het woord - speler 1")
                 win = False
                 setWord()
             else:
@@ -51,10 +53,19 @@ def setWord():
 
         if len(answerList) >= 4 and len(answerList) <= 7:
             root.title("Raad het woord - speler 2")
-            labelGame.configure(text = "Raad het woord")
+            labelGame.destroy()
+
+            labelGame2 = tk.Label(
+                frameGame,
+                text = "Raad het woord",
+                font = ("arial", 16)
+                )
+            labelGame2.grid(row = 0, columnspan = len(answerList))
+
             guesswordEntry.destroy()
             labelText.destroy()
-            buttonGame.configure(text = "Doe een gok")
+            buttonGame.destroy()
+            
             currentLetters = []
             for i in range(len(answerList)):
                 currentLetters.append(StringVar())
@@ -94,9 +105,12 @@ def setWord():
                 if points <= 0:
                     againOrNot()
 
-            buttonGame.configure(command = guessing)
-            print(answer)
-            print(answerList)
+            buttonGame2 = tk.Button(
+            frameGame,
+            text = "Doe een gok",
+            command = guessing
+            )
+            buttonGame2.grid(row = 3, columnspan = len(answerList)) 
             print(points)
 
         else:
@@ -108,11 +122,13 @@ def setWord():
 
     guesswordEntry = tk.Entry(frameGame, textvariable = guessword)
     guesswordEntry.grid(row = 1, column = 1)
+
     labelText = tk.Label(
         frameGame,
         text = "(4 tot 7 letters)"    
     )
     labelText.grid(row = 2, column =1)
+
     buttonGame = tk.Button(
         frameGame,
         text = "Stel woord in",
