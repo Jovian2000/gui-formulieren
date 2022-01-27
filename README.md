@@ -43,6 +43,8 @@ def start():
     else:
         YesOrNo()
 ```
+### Aanpassingen 
+Ik heb wat nutteloze packs weggehaald
 ## F1.8.03.L2 - Autoclicker (Clicker v5)
 Ik heb de clickerV4 aangepast. Er is nu een checkbox voor autoclicker.
 ``` python

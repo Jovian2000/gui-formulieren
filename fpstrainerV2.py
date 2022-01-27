@@ -17,7 +17,6 @@ remainingTimeText = textTime.get()
 def buttonTask():
     task = random.choice(taskLists)
     taskLabel = tk.Label(root, text = "Press: " + task, font =("Arial", 14))
-    # taskLabel.pack()
     taskLabel.place(x=random.randint(0,385), y=random.randint(75,450))
     def keyTask(event):
         global points
@@ -93,7 +92,6 @@ startButton = tk.Button(
     command = lambda:[start(), buttonTask()],
     text = "Click here to start",
 )
-startButton.pack()
 startButton.place(relx = 0.5, rely = 0.5, anchor = "center")
 
 timePickLabel = tk.Label(
@@ -102,11 +100,9 @@ timePickLabel = tk.Label(
     font =("Arial", 13),
     bg = "DarkOliveGreen4",
     fg = "black")
-timePickLabel.pack()
 timePickLabel.place(relx = 0.5, rely = 0.2, anchor = "center")
 
 timePickEntry = tk.Entry(root, textvariable = timeValue, font = ("Arial", 13), justify ="center")
-timePickEntry.pack()
 timePickEntry.place(relx = 0.5, rely = 0.25, anchor = "center")
 
 root.mainloop()
