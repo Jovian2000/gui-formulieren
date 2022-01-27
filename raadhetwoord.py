@@ -79,7 +79,8 @@ def setWord():
                     values = boxList,
                     textvariable = currentLetters[i],
                     justify ="center",
-                    wrap = True 
+                    wrap = True,
+                    state ="readonly" 
                 )
                 letterBox.grid(row = 1, column = i)
                 alphabetList.extend(answerList[i])
