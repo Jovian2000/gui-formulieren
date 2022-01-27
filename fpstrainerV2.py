@@ -17,7 +17,7 @@ remainingTimeText = textTime.get()
 def buttonTask():
     task = random.choice(taskLists)
     taskLabel = tk.Label(root, text = "Press: " + task, font =("Arial", 14))
-    taskLabel.pack()
+    # taskLabel.pack()
     taskLabel.place(x=random.randint(0,385), y=random.randint(75,450))
     def keyTask(event):
         global points
