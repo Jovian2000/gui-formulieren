@@ -12,7 +12,7 @@ textInfo = ""
 alphabetList = list(string. ascii_lowercase)
 boxList = []
 win = False
-pointsPerLetter = 0
+correctLetters = 0
 guessword = tk.StringVar()
 points = 0
 
@@ -80,14 +80,15 @@ def setWord():
                     textvariable = currentLetters[i],
                     justify ="center",
                     wrap = True,
-                    state ="readonly" 
+                    state ="readonly",
+                    width = 4
                 )
                 letterBox.grid(row = 1, column = i)
                 alphabetList.extend(answerList[i])
                 boxList.clear()
             
             def guessing():
-                global points, win, pointsPerLetter
+                global points, win, correctLetters
                 userGuess = ""
                 for x in currentLetters:                    
                     userGuess += str(x.get())
@@ -96,12 +97,12 @@ def setWord():
                     win = True    
                     againOrNot()
                 else:
-                    pointsPerLetter = 0
+                    correctLetters = 0
                     for i in range(len(userGuessList)):
                         if userGuessList[i] != answerList[i]:
                             points -= 2
                         else:
-                            pointsPerLetter += 1
+                            correctLetters += 1
                     wrongWord()
                 if points <= 0:
                     againOrNot()
@@ -137,10 +138,10 @@ def setWord():
     buttonGame.grid(row = 3, column = 1)
 
     def wrongWord():
-        if pointsPerLetter == 1:
-            pointsText = "Helaas, er is " + str(pointsPerLetter) + " letter goed"
+        if correctLetters == 1:
+            pointsText = "Helaas, er is " + str(correctLetters) + " letter goed"
         else:
-            pointsText = "Helaas, er zijn " + str(pointsPerLetter) + " letters goed"
+            pointsText = "Helaas, er zijn " + str(correctLetters) + " letters goed"
         wrongInfo = showerror(
             title = "Fout!",
             message = pointsText

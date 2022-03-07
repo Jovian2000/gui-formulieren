@@ -406,3 +406,6 @@ root.mainloop()
 ```
 ### aanpassingen
 Ik heb nog wat aanpassingen gedaan in raadhetwoord.py, i.p.v. dat hij nu de labels en knoppen veranderd, maakt de programma een nieuwe aan.
+
+## F1.8.03.O4 - Een registratie formulier
+De laatste opdracht afgemaakt 

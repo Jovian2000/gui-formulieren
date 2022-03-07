@@ -10,7 +10,7 @@ root.title("Days by date calculator")
 root.config(bg = "black")
 
 def calculate():
-    global number, textInfo
+    global textInfo
     dayPicked = selectedDay.get() 
     monthPicked = selectedMonth.get()
     yearPicked = selectedYear.get()
